@@ -43,4 +43,45 @@
     .right  { transform: rotateY(90deg) translateZ(200px); }
     .left   { transform: rotateY(-90deg) translateZ(200px); }
     .top    { transform: rotateX(90deg) translateZ(200px); }
-    .bottom { transform
+    .bottom { transform: rotateX(-90deg) translateZ(200px); }
+
+    .cactus { position: absolute; width: 180px; opacity: 0.7; filter: drop-shadow(0 0 10px #00ff00); }
+    .cactus.left { bottom: 10%; left: -100px; }
+    .cactus.right { bottom: 15%; right: -100px; }
+
+    button {
+      margin-top: 30px; padding: 15px 30px; background: #00ffff; color: #000; border: none;
+      font-size: 1.2em; cursor: pointer; border-radius: 8px; box-shadow: 0 0 20px #00ffff;
+      transition: all 0.3s;
+    }
+    button:hover { background: #00cccc; transform: scale(1.05); box-shadow: 0 0 40px #00ffff; }
+  </style>
+</head>
+<body>
+  <h1>Quantum Energy OS</h1>
+  <p class="subtitle">Desde el desierto de Baja California – Un oasis cuántico para Kardashev Tipo 1</p>
+
+  <div class="scene">
+    <div class="cube">
+      <div class="face front"  data-desc="Majorana qubits en nanowires">Capa Física</div>
+      <div class="face back"   data-desc="Braiding topológico protegido">Capa Topológica</div>
+      <div class="face right"  data-desc="Almacenamiento holográfico en cuarzo 4D">Capa 4D</div>
+      <div class="face left"   data-desc="Simulación fusión + redes inteligentes">Capa Energía</div>
+      <div class="face top"    data-desc="Framework Q# para devs mortales">Interfaz</div>
+      <div class="face bottom" data-desc="Energía limpia, sin desperdicio">Visión</div>
+    </div>
+  </div>
+
+  <img src="https://i.imgur.com/9zY8J4L.png" class="cactus left" alt="Cactus saguaro pixelado"> <!-- Reemplaza con tu imagen o SVG -->
+  <img src="https://i.imgur.com/9zY8J4L.png" class="cactus right" alt="Cactus saguaro pixelado">
+
+  <button onclick="simulateEnergy()">Simular optimización energética</button>
+
+  <script>
+    function simulateEnergy() {
+      alert("¡Red optimizada! -30% desperdicio. Energía neta: +1.2 GW. Desde Mexicali, el futuro ya brilla.");
+      // Aquí podrías agregar una animación real: partículas de energía fluyendo del cubo al fondo
+    }
+  </script>
+</body>
+</html>
