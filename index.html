@@ -231,3 +231,74 @@
   </script>
 </body>
 </html>
+
+const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
+let konamiIndex = 0;
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === konamiCode ) {
+    konamiIndex++;
+    if (konamiIndex === konamiCode.length) {
+      konamiIndex = 0;
+      
+      // Sonic estilo Yuji Naka (sprite clásico 1991)
+      const sonic = document.createElement('img');
+      sonic.src = 'https://i.imgur.com/0pZfK8v.gif'; // Sonic running sprite (busca "sonic 1 gif pixel" si no funciona)
+      sonic.style.position = 'absolute';
+      sonic.style.bottom = '25%';
+      sonic.style.left = '-300px';
+      sonic.style.width = '180px';
+      sonic.style.imageRendering = 'pixelated';
+      sonic.style.filter = 'drop-shadow(0 0 20px #00ff00)';
+      sonic.style.transition = 'left 3.5s linear, bottom 0.5s';
+      
+      // Rings flotando (efecto clásico)
+      const ringContainer = document.createElement('div');
+      ringContainer.style.position = 'absolute';
+      ringContainer.style.bottom = '30%';
+      ringContainer.style.left = '50%';
+      ringContainer.style.opacity = '0';
+      ringContainer.style.transition = 'opacity 1s';
+      document.body.appendChild(ringContainer);
+      
+      // Crear 5 rings
+      for (let i = 0; i < 5; i++) {
+        const ring = document.createElement('img');
+        ring.src = 'https://i.imgur.com/1jX8m3L.png'; // Ring pixelado
+        ring.style.position = 'absolute';
+        ring.style.left = `${Math.random()*100}%`;
+        ring.style.top = `${Math.random()*50}%`;
+        ring.style.width = '40px';
+        ring.style.transform = `rotate(${Math.random()*360}deg)`;
+        ring.style.animation = 'spin 2s infinite linear';
+        ringContainer.appendChild(ring);
+      }
+      
+      document.body.appendChild(sonic);
+      
+      setTimeout(() => {
+        sonic.style.left = '120%';
+        sonic.style.bottom = '35%'; // Salto final
+        ringContainer.style.opacity = '1';
+      }, 100);
+      
+      setTimeout(() => {
+        sonic.remove();
+        ringContainer.remove();
+        alert('¡Recibo CFE: 0 pesos! – Gracias, Yuji Naka. El desierto corre más rápido que tú.');
+      }, 3800);
+    }
+  } else {
+    konamiIndex = 0;
+  }
+});
+
+// Animación de spin para rings (estilo Sega)
+const style = document.createElement('style');
+style.innerHTML = `
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+`;
+document.head.appendChild(style);
