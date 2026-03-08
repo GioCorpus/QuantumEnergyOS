@@ -28,3 +28,16 @@ Un stack híbrido (Q# + Python + Azure Quantum) que optimiza redes eléctricas, 
 - Próximo: braiding real con Majoranas (2026-27).  
 
 ¡Contribuye! Forkea, PRs bienvenidos.  
+
+# Quantum Energy OS  
+Desde Mexicali, Baja California – para el noroeste y el mundo  
+
+**Razón principal:**  
+Porque estamos hartos de abrir el recibo de la CFE y sentir que nos roban el sol.  
+Porque en el desierto, donde el calor quema y el viento no para, la luz debería ser gratis —o al menos, justa.  
+
+Este proyecto no es por fama. Es por bajar esos números locos en la factura.  
+Si un día la red eléctrica de Sonora, Baja California y Chihuahua deja de sangrar kilowatts... sabremos que valió cada commit.  
+
+Adiós a los recibos que parecen facturas de avión.  
+Bienvenido el futuro: energía limpia, sin sorpresas.
