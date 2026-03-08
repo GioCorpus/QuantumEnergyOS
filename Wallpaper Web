@@ -1,0 +1,25 @@
+body {
+    background: linear-gradient(to bottom, #ff4500, #8b4513, #4b2e1a); /* Tonos de atardecer desértico */
+    background-image: url('https://thumbs.dreamstime.com/b/pixel-art-desert-sunset-landscape-teal-cactus-featuring-pink-purple-sky-yellow-sun-silhouetted-mountains-create-403077212.jpg'); /* O usa una URL de las imágenes arriba */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+<div class="cactus-bg">
+    <img src="https://thumbs.dreamstime.com/b/pixelated-desert-scene-features-striking-rock-formations-cacti-vibrant-sunset-image-suits-retro-gaming-digital-art-361770411.jpg" alt="Cactus pixelado" class="cactus" style="position: absolute; bottom: 10%; left: 10%; width: 150px; opacity: 0.7;">
+    <!-- Agrega más si deseas -->
+</div>
+
+.face {
+    background: rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 30px #00ffff, inset 0 0 20px #00ffff;
+    border: 2px solid #00ffff;
+}
+.face:hover {
+    box-shadow: 0 0 60px #00ffff, inset 0 0 40px #00ffff;
+    transform: scale(1.1);
+}
+
+<h1>Quantum Energy OS</h1>
+<p>Desde el desierto de Baja California hacia Kardashev Tipo 1 – Un oasis cuántico en el Sonora</p>
