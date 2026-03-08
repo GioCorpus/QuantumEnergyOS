@@ -90,3 +90,20 @@ years_to_type1_optim = optim_history[-1][0] if optim_history[-1][1] >= K1_ENERGY
 
 print(f"\nAños estimados para alcanzar Tipo 1 (escenario base): {years_to_type1_base}")
 print(f"Años estimados con aceleración cuántica/fusión: {years_to_type1_optim}")
+
+<footer style="position: fixed; bottom: 10px; right: 10px; font-family: 'VT323', monospace; font-size: 14px; color: #00ff00; opacity: 0.3; transition: opacity 0.5s;">
+  <span class="hover-reveal">
+    Simon Arturo Corpus Verduzco – El que enseñó a correr sin cansarse.  
+    Desde Mexicali, siempre en marcha.
+  </span>
+</footer>
+
+<style>
+  .hover-reveal {
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  footer:hover .hover-reveal {
+    opacity: 1;
+  }
+</style>
