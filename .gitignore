@@ -16,3 +16,73 @@ _site/
 # counterproductive to check this file into the repository.
 # Details at https://github.com/github/pages-gem/issues/768
 Gemfile.lock
+
+const normaCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA']; // Konami clásico, o cámbialo si quieres uno único
+let norma bernal becerra Index = 0;
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === normaCode ) {
+    normaIndex++;
+    if (normaIndex === normaCode.length) {
+      normaIndex = 0;
+      
+      const normaMessage = document.createElement('div');
+      normaMessage.innerHTML = `
+        <p style="font-family: 'VT323', monospace; font-size: 28px; color: #ff69b4; text-shadow: 0 0 10px #ff69b4;">
+          Gracias, mamá.<br>
+          Por vender casas y sueños desde el banco hasta el desierto.<br>
+          La luz que brilla aquí... es porque tú me enseñaste a cerrar tratos con el futuro.
+        </p>
+      `;
+      normaMessage.style.position = 'absolute';
+      normaMessage.style.top = '50%';
+      normaMessage.style.left = '50%';
+      normaMessage.style.transform = 'translate(-50%, -50%)';
+      normaMessage.style.background = 'rgba(0,0,0,0.8)';
+      normaMessage.style.padding = '25px';
+      normaMessage.style.border = '4px solid #ff69b4'; // Rosa cálido, como un atardecer
+      normaMessage.style.borderRadius = '10px';
+      normaMessage.style.opacity = '0';
+      normaMessage.style.transition = 'opacity 1s';
+      document.body.appendChild(normaMessage);
+      
+      // Detalle: una llave pixelada (por "cerrar tratos") que gira
+      const key = document.createElement('img');
+      key.src = 'https://i.imgur.com/3mP8k4L.png'; // Pixel key (busca "pixel art key" si no funciona)
+      key.style.position = 'absolute';
+      key.style.top = '40%';
+      key.style.left = '50%';
+      key.style.transform = 'translate(-50%, -50%)';
+      key.style.width = '80px';
+      key.style.animation = 'spin 3s infinite linear';
+      key.style.opacity = '0';
+      document.body.appendChild(key);
+      
+      setTimeout(() => {
+        normaMessage.style.opacity = '1';
+        key.style.opacity = '1';
+      }, 100);
+      
+      setTimeout(() => {
+        normaMessage.style.opacity = '0';
+        key.style.opacity = '0';
+        setTimeout(() => {
+          normaMessage.remove();
+          key.remove();
+        }, 1000);
+      }, 6000);
+    }
+  } else {
+    normaIndex = 0;
+  }
+});
+
+// Rotación suave para la llave
+const style = document.createElement('style');
+style.innerHTML = `
+  @keyframes spin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to   { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+`;
+document.head.appendChild(style);
