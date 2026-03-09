@@ -41,3 +41,10 @@ Si un día la red eléctrica de Sonora, Baja California y Chihuahua deja de sang
 
 Adiós a los recibos que parecen facturas de avión.  
 Bienvenido el futuro: energía limpia, sin sorpresas.
+
+## Project Structure
+
+- **src/**: Core quantum code (Q# files for operations, simulations, and debugging).
+- **notebooks/**: Jupyter notebooks for interactive simulations, visualizations, and prototyping.
+- **docs/**: Detailed documentation, architecture diagrams, and motivation notes.
+- **index.html**: Static demo page (GitHub Pages compatible).
