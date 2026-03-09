@@ -1,0 +1,3 @@
+git add src/ notebooks/ docs/
+git commit -m "Add initial project structure: src/, notebooks/, docs/"
+git push origin main
