@@ -55,3 +55,11 @@ document.addEventListener('keydown', (e) => {
     konamiIndex = 0;
   }
 });
+
+git add wallpaper-nabata-grid.png
+git commit -m "feat: wallpaper oficial Nabata - desierto puro con grid táctico, GBA 2001"
+git push
+
+git add wallpaper-nabata-easter-egg.png
+git commit -m "easter egg: nahual coyote escondido en dunas - solo para quien mira"
+git push
