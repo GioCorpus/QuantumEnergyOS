@@ -44,6 +44,8 @@ Bienvenido el futuro: energía limpia, sin sorpresas.
 
 ## Project Structure
 
+Mantén el manifiesto: "topología cuántica energética", motivación CFE, desde Mexicali.
+Añade sección "Documentación completa" con links a los demás archivos.
 - **src/**: Core quantum code (Q# files for operations, simulations, and debugging).
 - **notebooks/**: Jupyter notebooks for interactive simulations, visualizations, and prototyping.
 - **docs/**: Detailed documentation, architecture diagrams, and motivation notes.
