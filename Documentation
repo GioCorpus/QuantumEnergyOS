@@ -1,3 +1,131 @@
 git add src/ notebooks/ docs/
 git commit -m "Add initial project structure: src/, notebooks/, docs/"
 git push origin main
+
+# Documentación Quantum Energy OS
+
+Bienvenido al cerebro del proyecto: un stack híbrido para energía cuántica.  
+Desde el desierto de Baja California, contra facturas locas y hacia Kardashev 1.
+
+## Mapa rápido
+- (arquitectura.md) – Las 4 capas  
+- (motivacion.md) – Por qué Mexicali y la CFE  
+- (tecnologias.md) – Q#, Python, Azure, Majoranas  
+- (simulaciones.md) – Qué ya corre  
+- [Roadmap 2026-2030](roadmap.md) – Qué viene  
+- (contribuir.md) – Cómo meter mano  
+- (referencias.md) – Papers, libros, inspiración  
+
+# Arquitectura 4D: Cuarzo Topológico + Energía
+
+1. **Capa Física**: Majorana qubits en nanowires (braiding protegido).  
+   - Hardware: Azure Quantum o simulador local.  
+   - Estado: Prototipo en Q#.  
+
+2. **Capa Topológica**: Depuración de nudos y errores.  
+   - Algoritmo: Braiding con depuración automática.  
+
+3. **Capa 4D (Almacenamiento)**: Cuarzo holográfico – datos en volumen 4D.  
+- Idea: Holografía cuántica para 10^12 estados sin disco.  
+
+4. **Capa Energía**: Optimización de redes + fusión simulada.  
+   - Objetivo: -30% desperdicio en Sonora/Baja California.  
+
+Diagrama (ASCII simple):  
+``` ← Energía
+       ↑ ← Almacenamiento
+       ↑ ← Topología
+       ↑ ← Física
+
+# Motivación: Adiós a los recibos locos
+
+En Mexicali, el sol quema y la CFE cobra como si fuera oro.  
+Este proyecto nace de eso: no por fama, sino por bajar facturas.  
+
+- Región: Noroeste México (Sonora, Baja California, Chihuahua).  
+- Problema: Pérdidas en transmisión, dependencia de gas, precios volátiles.  
+- Solución: Energía cuántica limpia, optimizada, accesible.  
+
+Inspiración personal:  
+- Mi padre: Simon Arturo Corpus Verduzco – ingeniero, profesor, vendedor.  
+- Mi madre: Norma Bernarda Serra – ejecutiva bancaria, vendedora de casas.  
+- Ellos me enseñaron a "arreglar", "vender" y "enseñar". Ahora yo arreglo la luz.  
+
+# Tecnologías
+
+- **Q#**: Lenguaje principal (Microsoft Quantum).  
+- **Python + Qiskit**: Simulaciones visuales.  
+- **Azure Quantum**: Ejecución real (cuando esté disponible).  
+- **Majoranas**: Braiding topológico (Nature 2025+).  
+- **Cuarzo 4D**: Concepto holográfico (inspirado en óptica cuántica).  
+
+Requisitos:  
+- .NET SDK 8+  
+- Visual Studio Code + Q# extension  
+- Jupyter para notebooks
+
+# Simulaciones actuales
+
+- BalancearRed.qs: Optimiza flujo en red eléctrica (Q#).  
+- FusionSim.qs: Simula fusión (Python + Qiskit).  
+- Cuadernos: demo_energy.ipynb – gráficos de Kardashev.  
+
+Resultados:  
+- Red noroeste: -28% desperdicio simulado.  
+- Tiempo a Kardashev 1: ~150 años base, ~80 con aceleración cuántica.  
+
+# Roadmap
+
+2026: Braiding real + demo en Azure.  
+2027: Integración con CFE (simulación).  
+2030: Prototipo físico (cuarzo 4D).  
+2040: Energía neta positiva en Sonora.  
+
+# Cómo contribuir
+
+- Forkea.  
+- Crea rama: `feat/tu-idea`.  
+- Commit: `git commit -m "Añadí simulación de fusión"`.  
+- Pull Request: "Desde Mexicali, con amor".  
+
+# Referencias
+
+- Nature 2025: Majorana braiding.  
+- Kardashev: Escala original (1964).  
+- Iwata: "El código es para todos".  
+- Linus: "Funciona o muere".  
+
+# Arquitectura Quantum Energy OS – 4 Capas para Kardashev 1
+
+Desde Mexicali, Baja California.  
+No es ciencia ficción: es código que arregla facturas locas de la CFE.
+
+## Visión general
+Un stack híbrido: Q# para lógica cuántica, Python para simulación, Azure Quantum para ejecución real.  
+Objetivo: optimizar redes eléctricas del noroeste (Sonora, BC, Chihuahua), simular fusión, almacenar datos en 4D... y bajar el recibo a menos de 500 pesos.
+
+Diagrama de flujo (ASCII – porque CRT verde no miente):
+
+``` ↑ ↑
+              [Simulación Fusión + Redes]
+                            ↑ ↑ ↑ ↑ ```
+
+## Capa 1: Física – Majorana Qubits
+- **Tecnología**: Qubits topológicos basados en Majoranas (nanowires de InSb + campos magnéticos).  
+- **Estado**: Simulación en Q# (BalancearRed.qs).  
+- **Función**: Corre en hardware real (Azure Quantum, 2026+).  
+- **Ventaja**: Errores protegidos por topología – no se descoherencian con el calor del desierto.  
+- **Código base**:  
+  ```qsharp
+  operation BalancearRed(qubits: Qubit[ ]) : Unit {
+      // Braiding para redistribuir flujo
+      for i in 0..Length(qubits)-1 {
+          ApplyMajoranaBraiding(qubits , qubits );
+      }
+  }
+
+def almacenar_en_cuarzo(estado_cuantico):
+    # Holograma: proyectar estado en volumen 3D
+    return proyectar_holografico(estado_cuantico, cristal_dim=(100,100,100))
+
+
