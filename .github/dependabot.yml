@@ -12,3 +12,4 @@ updates:
   schedule:
     interval: "weekly"
 git config --global commit.gpgsign true
+docker run --read-only --memory=512m
