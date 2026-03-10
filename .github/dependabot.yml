@@ -13,3 +13,6 @@ updates:
     interval: "weekly"
 git config --global commit.gpgsign true
 docker run --read-only --memory=512m
+JWT
+Rate limiting
+Input validation
