@@ -1,1 +1,13 @@
+name: Security Scan
 
+on: [push, pull_request]
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Python security scan
+        run: |
+          pip install pip-audit
+          pip-audit
