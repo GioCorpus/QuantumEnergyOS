@@ -16,3 +16,6 @@ docker run --read-only --memory=512m
 JWT
 Rate limiting
 Input validation
+from pydantic import BaseModel
+pydantic
+marshmallow
