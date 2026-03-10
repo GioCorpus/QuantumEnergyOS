@@ -302,3 +302,18 @@ style.innerHTML = `
   }
 `;
 document.head.appendChild(style);
+
+        <button onclick="enfriarQubits()">Enfriar qubits (simulado)</button>
+
+<script>
+  async function enfriarQubits() {
+    const response = await fetch('http://localhost:3000/enfriar', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ qubits: 8 })  // Cambia el número si quieres
+    });
+    
+    const data = await response.json();
+    alert(`¡Enfriado!\nTemperatura: ${data.tempFinal}\n${data.mensaje}`);
+  }
+</script>
