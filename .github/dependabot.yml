@@ -11,3 +11,4 @@ updates:
   directory: "/"
   schedule:
     interval: "weekly"
+git config --global commit.gpgsign true
