@@ -86,3 +86,7 @@ style.innerHTML = `
   }
 `;
 document.head.appendChild(style);
+
+.env
+secrets.json
+credentials.json
