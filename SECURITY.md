@@ -84,3 +84,20 @@ QuantumEnergyOS
 │
 ├── logs/
 └── api/
+
+SECURITY.md
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+
+# Security Policy
+
+## Reporting a Vulnerability
+
+Please report vulnerabilities privately via email.
+
+security@quantumenergyos.org
+
+import os
+token = os.getenv("IBM_QUANTUM_TOKEN")
+
+
