@@ -11,3 +11,8 @@ jobs:
         run: |
           pip install pip-audit
           pip-audit
+
+MAX_QUBITS = 32
+
+if n_qubits > MAX_QUBITS:
+    raise Exception("Invalid circuit size")
