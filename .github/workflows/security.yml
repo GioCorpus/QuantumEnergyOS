@@ -1,0 +1,16 @@
+name: Security
+
+on: [push, pull_request]
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install security tools
+        run: |
+          pip install pip-audit bandit
+      - name: dependency scan
+        run: pip-audit
+      - name: static analysis
+        run: bandit -r .
