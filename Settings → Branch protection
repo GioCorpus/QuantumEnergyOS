@@ -16,3 +16,25 @@ MAX_QUBITS = 32
 
 if n_qubits > MAX_QUBITS:
     raise Exception("Invalid circuit size")
+docker run --memory=4g --cpus=2 quantumenergyos
+
+QuantumEnergyOS
+│
+├── core
+│   ├── algorithms
+│   ├── circuits
+│   └── optimizers
+│
+├── infrastructure
+│   ├── cloud_backends
+│   ├── simulators
+│   └── containers
+│
+├── security
+│   ├── auth
+│   ├── validation
+│   └── sandbox
+│
+├── api
+└── docs
+hash = SHA256(circuit)
