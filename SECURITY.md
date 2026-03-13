@@ -97,6 +97,52 @@ Please report vulnerabilities privately via email.
 
 security@quantumenergyos.org
 
+# 🔐 Security Policy — QuantumEnergyOS
+
+## Versiones soportadas
+
+| Versión | Soporte de seguridad |
+|---------|----------------------|
+| `main`  | ✅ Activo            |
+| < 1.0   | ❌ No soportado      |
+
+## Reportar una vulnerabilidad
+
+**No abras un Issue público para vulnerabilidades de seguridad.**
+
+Envía un reporte privado a través de:
+- GitHub Security Advisories: **Settings → Security → Advisories → New advisory**
+- O por correo a: `security@[tu-dominio]` (PGP disponible bajo petición)
+
+Incluye:
+1. Descripción del problema
+2. Pasos para reproducir
+3. Impacto potencial
+4. Versión afectada
+
+Responderemos en **72 horas**. Si se confirma, publicaremos un CVE y fix en ≤ 14 días.
+
+## Modelo de amenazas
+
+QuantumEnergyOS opera con las siguientes superficies de ataque en mente:
+
+| Superficie | Mitigación |
+|---|---|
+| Input de circuitos cuánticos | Validación con Pydantic + límite `max_qubits=32` |
+| API REST | JWT + rate limiting + HTTPS obligatorio |
+| Dependencias | Dependabot + `pip-audit` + `safety` en CI |
+| Contenedor | Docker `--read-only --memory=512m` + usuario no-root |
+| Código | `bandit` + `semgrep` en cada PR |
+| Releases | Tags firmados con GPG (`git tag -s`) |
+| Secretos | `.env` nunca en git — usar `.env.example` como plantilla |
+
+## Prácticas de desarrollo seguro
+
+- Commits firmados: `git config --global commit.gpgsign true`
+- SBOM generado en cada release (formato CycloneDX)
+- Imágenes Docker escaneadas con `trivy` antes de publicar
+- Entornos reproducibles con Nix o Guix (roadmap)
+
 import os
 token = os.getenv("IBM_QUANTUM_TOKEN")
 
