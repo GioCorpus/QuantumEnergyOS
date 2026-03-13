@@ -250,3 +250,16 @@ numpy
 scipy
 pytest
 ruff
+
+# 1. Generar clave GPG
+gpg --gen-key
+
+# 2. Obtener el ID
+gpg --list-secret-keys --keyid-format=long
+
+# 3. Configurar git globalmente
+git config --global user.signingkey TU_KEY_ID
+git config --global commit.gpgsign true
+
+# 4. Firmar releases
+git tag -s v1.0 -m "Release v1.0 — QuantumEnergyOS"
