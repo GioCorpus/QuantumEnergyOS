@@ -1,19 +1,31 @@
-QuantumEnergyOS/
-├── security/
-│   ├── validation.py      ← Pydantic v2 + Marshmallow, max_qubits=32,
-│   │                         SHA-256 por circuito, anti-replay de timestamp
-│   ├── auth.py            ← JWT (HS256) + rate limiting sliding window,
-│   │                         blacklist de JTI, decoradores @require_role
-│   └── threat_detection.py← Detección: brute force, circuit replay,
-│                            qubit spikes, parámetros extremos — logging SIEM-ready
-├── Dockerfile             ← Multi-stage, usuario qeos:1000, sin root,
-│                            --read-only + --memory=512m en runtime
-├── .env.example           ← Plantilla de secretos (nunca valores reales)
-├── .gitignore             ← Bloquea .env, *.pem, *.key, credentials.json
-├── SECURITY.md            ← Política de divulgación + modelo de amenazas
-└── .github/
-    ├── CODEOWNERS         ← @GioCorpus como reviewer obligatorio en /security/
-    ├── dependabot.yml     ← Updates semanales: pip + GitHub Actions
-    └── workflows/
-        └── ci-security.yml← bandit → semgrep → pip-audit → trivy →
-                              SBOM CycloneDX → gitleaks
+version: 2
+updates:
+  # ── Python (pip) ──────────────────────────────────────────
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "America/Tijuana"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "security"
+    commit-message:
+      prefix: "chore(deps)"
+    ignore:
+      - dependency-name: "qiskit"
+        update-types: ["version-update:semver-major"]
+
+  # ── GitHub Actions ────────────────────────────────────────
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    labels:
+      - "dependencies"
+      - "ci"
+    commit-message:
+      prefix: "chore(actions)"
