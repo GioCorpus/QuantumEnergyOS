@@ -49,6 +49,15 @@ jobs:
         run: bandit -r .
      # Producción — reproducible al 100%
 pip install -r requirements-pinned.txt # Exact content of line 51
+sed -n '51p' requirements-pinned.txt
+package==1.2.3
+package>=1.2,<2.0
+git+https://github.com/user/repo.git@branch#egg=package
+package==1.2.3 --hash=sha256:abc123...
+sed -n '51p' requirements-pinned.txt
+awk 'NR==51' requirements-pinned.txt
+pip install --dry-run -r requirements-pinned.txt
+pip-compile --generate-hashes --output-file=requirements-pinned.txt requirements.in
 sed -n '51p' requirements-pinned.txt pip install -r requirements-pinned.txt
 pip install --verbose -r requirements-pinned.txt > pip-debug.log 2>&1
 pip-compile --generate-hashes --output-file=requirements-pinned.txt requirements.in
