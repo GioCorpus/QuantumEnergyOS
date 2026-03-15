@@ -24,3 +24,5 @@ flowchart TB
     AzureQuantum --> Storage[Almacenamiento Topológico 4D]
     Grid --> ImpactoRegional[Impacto: Baja California / Sonora / Chihuahua]
     Fusion --> ImpactoGlobal[Impacto: Energía limpia global]
+- name: Run pip-audit
+  run: pip-audit --requirement requirements-pinned.txt --skip-deps docs/
