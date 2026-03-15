@@ -47,8 +47,15 @@ jobs:
         run: pip-audit
       - name: Static security scan
         run: bandit -r .
+# Opción 1: pip-audit auto-fix (recomendado)
+pip install pip-audit
+pip-audit --fix -r requirements.txt
 
-        FROM python:3.11
+# Opción 2: instalar requirements actualizados directamente
+pip install -r requirements.txt --upgrade
+
+# Verificar que quedó limpio
+pip-audit -r requirements.txt
 
 RUN pip install qiskit qiskit-aer
 
