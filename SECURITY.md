@@ -49,13 +49,6 @@ jobs:
         run: bandit -r .
         pip install pip-audit
 pip-audit --fix -r requirements.txt
-
-# Opción 2: instalar requirements actualizados directamente
-pip install -r requirements.txt --upgrade
-
-# Verificar que quedó limpio
-pip-audit -r requirements.txt
-
 RUN pip install qiskit qiskit-aer
 
 WORKDIR /app
