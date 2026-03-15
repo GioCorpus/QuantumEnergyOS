@@ -49,7 +49,43 @@ jobs:
         run: bandit -r .
      # Producción — reproducible al 100%
 pip install -r requirements-pinned.txt
+token = os.getenv("IBM_QUANTUM_TOKEN")
+service = QiskitRuntimeService(token=token)
+```
 
+Además el cliente implementa `MAX_QUBITS=32` con mensaje claro, fingerprint SHA-256 del token para logs (sin exponer el token real), redacción automática del token en mensajes de error, y fallback automático a simulador local si no hay conexión IBM.
+
+**`Dockerfile`** — dos mejoras respecto a la versión básica que mostraste:
+
+| Antes | Después |
+|---|---|
+| `RUN pip install qiskit qiskit-aer` | `requirements-pinned.txt` (0 CVEs) |
+| Sin usuario definido → corre como root | `USER qeos:1000` |
+| Sin límites de recursos | `--memory=512m --cpus=2` en runtime |
+| Sin health check | `HEALTHCHECK` cada 30s |
+
+**Archivos de comunidad** (`SECURITY.md`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`) consolidan todo lo que tenías disperso en un formato estándar de GitHub — estos tres archivos aparecen automáticamente en la pestaña **Insights → Community** del repo con checkmarks verdes ✅.
+
+---
+
+### 📁 Estructura final del repo
+```
+QuantumEnergyOS/
+├── SECURITY.md          ✅ política + modelo de amenazas
+├── CONTRIBUTING.md      ✅ guía + checklist de seguridad
+├── CODE_OF_CONDUCT.md   ✅ Contributor Covenant v2.1
+├── Dockerfile           ✅ multi-stage + no-root + pinned
+├── cloud/
+│   └── ibm_quantum.py   ✅ token via env + MAX_QUBITS=32
+└── .github/
+    ├── CODEOWNERS
+    ├── dependabot.yml
+    └── workflows/
+        ├── ci-qsharp-modern.yml
+        ├── ci-qiskit.yml
+        ├── ci-web-deploy.yml
+        ├── ci-security.yml
+        └── ci-pip-audit-fix.yml
 # Desarrollo local — producción + herramientas
 pip install -r requirements-pinned.txt -r requirements-dev.txt
 
@@ -155,5 +191,3 @@ QuantumEnergyOS opera con las siguientes superficies de ataque en mente:
 
 import os
 token = os.getenv("IBM_QUANTUM_TOKEN")
-
-
