@@ -48,6 +48,10 @@ Bienvenido el futuro: energía limpia, sin sorpresas.
 - **notebooks/**: Jupyter notebooks for interactive simulations, visualizations, and prototyping.
 - **docs/**: Detailed documentation, architecture diagrams, and motivation notes.
 - **index.html**: Static demo page (GitHub Pages compatible).
+sed -n '51p' README.md
+awk 'NR==51' README.md
+![Security Scan](https://github.com/GioCorpus/QuantumEnergyOS/actions/workflows/ci-security.yml/badge.svg)
+markdownlint README.md
 
 - ════════════════════════════════════════════════════════════════
   Giovanny Anthony Corpus Bernal
