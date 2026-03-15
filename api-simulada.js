@@ -34,3 +34,23 @@ app.listen(port, () => {
 npm init -y
 npm install express
 
+Quantum Layer (Q# + Qiskit)
+
+BalancearRed.qs
+
+FusionSim.qs
+
+BraidingDebug.qs
+
+Notebooks de simulación.
+
+Cloud (Azure Quantum)  
+Ejecución en hardware cuántico real o simuladores de alta escala.
+
+Aplicaciones Energéticas
+
+Optimización de red eléctrica.
+
+Simulación de fusión.
+
+Almacenamiento en cuarzo topológico 4D.
