@@ -49,9 +49,9 @@ jobs:
         run: bandit -r .
         pip install pip-audit
 pip-audit --fix -r requirements.txt
-
+pip install -r requirements.txt --upgrade
+pip-audit -r requirements.txt
 RUN pip install qiskit qiskit-aer
-
 WORKDIR /app
 COPY . .
 
