@@ -49,6 +49,15 @@ jobs:
         run: bandit -r .
      # Producción — reproducible al 100%
 pip install -r requirements-pinned.txt
+package==1.2.3
+package>=1.2,<2.0
+git+https://github.com/user/repo.git@branch#egg=package
+package==1.2.3 --hash=sha256:abc123...
+sed -n '51p' requirements-pinned.txt
+awk 'NR==51' requirements-pinned.txt
+sed -n '48,54p' requirements-pinned.txt
+pip install -r requirements-pinned.txt
+pip install --verbose -r requirements-pinned.txt
 token = os.getenv("IBM_QUANTUM_TOKEN")
 service = QiskitRuntimeService(token=token)
 ```
