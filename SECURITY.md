@@ -45,13 +45,13 @@ jobs:
           pip install pip-audit bandit
       - name: Dependency scan
         run: pip-audit
-      - name: Static security scan
+      - name: Static security scan pip check -r requirements-pinned.txt
         run: bandit -r .
      # Producción — reproducible al 100%
 pip install -r requirements-pinned.txt
 pip install --verbose -r requirements-pinned.txt > pip-verbose.log 2>&1
 pip hash --algorithm sha256 <package-file-you-suspect>.whl
-package==1.2.3
+package==1.2.3 pkg_resources.parse_requirements
 package>=1.2,<2.0
 git+https://github.com/user/repo.git@branch#egg=package
 package==1.2.3 --hash=sha256:abc123...
