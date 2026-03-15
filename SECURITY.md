@@ -47,8 +47,7 @@ jobs:
         run: pip-audit
       - name: Static security scan
         run: bandit -r .
-# Opción 1: pip-audit auto-fix (recomendado)
-pip install pip-audit
+        pip install pip-audit
 pip-audit --fix -r requirements.txt
 
 # Opción 2: instalar requirements actualizados directamente
