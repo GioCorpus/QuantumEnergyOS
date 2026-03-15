@@ -7,8 +7,11 @@
 # Python: 3.11+
 #
 # Uso:
-#   pip install -r requirements-pinned.txt
-#
+# sed -n '51p' requirements-pinned.txt
+# pip install --dry-run -r requirements-pinned.txt
+# pip-audit -r requirements-pinned.txt
+# pip-compile --generate-hashes --output-file=requirements-pinned.txt requirements.in
+# requests==2.32.5
 # Actualizar (con auditoría):
 #   pip-audit --fix -r requirements.txt
 #   pip freeze > requirements-pinned.txt
