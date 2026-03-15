@@ -1,0 +1,20 @@
+name: Requirements Validation
+
+on:
+  pull_request:
+    paths:
+      - "requirements-pinned.txt"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install pip
+        run: pip install --upgrade pip
+      - name: Run requirements check
+        run: make check-reqs
