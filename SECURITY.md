@@ -49,8 +49,21 @@ jobs:
         run: bandit -r .
      # Producción — reproducible al 100%
 pip install -r requirements-pinned.txt # Exact content of line 51
-sed -n '51p' requirements-pinned.txt
+sed -n '51p' requirements-pinned.txt pip install -r requirements-pinned.txt
+pip install --verbose -r requirements-pinned.txt > pip-debug.log 2>&1
+pip-compile --generate-hashes --output-file=requirements-pinned.txt requirements.in
+pip-audit -r requirements-pinned.txt
+pip install --dry-run -r requirements-pinned.txt
+      - name: Static security scan pip check -r requirements-pinned.txt
+        run: bandit -r .
+              - name: Dependency Audit (pip-audit)
+        run: pip-audit --strict
 
+      - name: Static Code Analysis (bandit)
+        run: bandit -r . -ll  # -ll = low+ level; adjust as needed
+
+      - name: Consistency Check
+        run: pip check -r requirements-pinned.txt || true  # non-fatal if desired
 # Context: lines 48 to 54 (most useful)
 sed -n '48,54p' requirements-pinned.txt
 
