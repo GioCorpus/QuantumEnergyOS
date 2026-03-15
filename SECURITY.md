@@ -47,10 +47,20 @@ jobs:
         run: pip-audit
       - name: Static security scan
         run: bandit -r .
-        pip install pip-audit
+     # Producción — reproducible al 100%
+pip install -r requirements-pinned.txt
+
+# Desarrollo local — producción + herramientas
+pip install -r requirements-pinned.txt -r requirements-dev.txt
+
+# Verificar que sigue limpio
+pip-audit -r requirements-pinned.txt
+
+# Regenerar después de actualizar
 pip-audit --fix -r requirements.txt
-pip install -r requirements.txt --upgrade
-pip-audit -r requirements.txt
+pip freeze > requirements-pinned.txt
+git add requirements-pinned.txt
+git commit -S -m "chore(deps): actualizar pins — $(date +%Y-%m-%d)"
 RUN pip install qiskit qiskit-aer
 WORKDIR /app
 COPY . .
