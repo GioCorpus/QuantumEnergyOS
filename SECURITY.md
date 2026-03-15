@@ -48,7 +48,14 @@ jobs:
       - name: Static security scan pip check -r requirements-pinned.txt
         run: bandit -r .
      # Producción — reproducible al 100%
-pip install -r requirements-pinned.txt
+pip install -r requirements-pinned.txt # Exact content of line 51
+sed -n '51p' requirements-pinned.txt
+
+# Context: lines 48 to 54 (most useful)
+sed -n '48,54p' requirements-pinned.txt
+
+# Alternative (first 60 lines, portable)
+head -n 60 requirements-pinned.txt | tail -n 13
 pip install --verbose -r requirements-pinned.txt > pip-verbose.log 2>&1
 pip hash --algorithm sha256 <package-file-you-suspect>.whl
 package==1.2.3 pkg_resources.parse_requirements
