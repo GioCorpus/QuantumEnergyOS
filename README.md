@@ -187,5 +187,8 @@ STILL EXPLORING — explain when relevant:
 # QuantumEnergyOS
 
 ![Security Scan](https://github.com/GioCorpus/QuantumEnergyOS/actions/workflows/ci-security.yml/badge.svg)
+![Tests](https://github.com/GioCorpus/QuantumEnergyOS/actions/workflows/ci-tests.yml/badge.svg)
+![Lint](https://github.com/GioCorpus/QuantumEnergyOS/actions/workflows/ci-lint.yml/badge.svg)
+![Dependencies](https://github.com/GioCorpus/QuantumEnergyOS/actions/workflows/ci-pip-audit-fix.yml/badge.svg)
 
 ════════════════════════════════════════════════════════════════
