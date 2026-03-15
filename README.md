@@ -193,3 +193,33 @@ STILL EXPLORING — explain when relevant:
 ![Tests](https://github.com/GioCorpus/QuantumEnergyOS/actions/workflows/ci-tests.yml/badge.svg)
 ![Lint](https://github.com/GioCorpus/QuantumEnergyOS/actions/workflows/ci-lint.yml/badge.svg)
 ![Dependencies](https://github.com/GioCorpus/QuantumEnergyOS/actions/workflows/ci-pip-audit-fix.yml/badge.svg)
+
+# ✨ QuantumEnergyOS ✨
+_Energía limpia impulsada por computación cuántica_
+
+
+## 📊 Estado del Proyecto
+
+![Security Scan](https://github.com/GioCorpus/QuantumEnergyOS/actions/workflows/ci-security.yml/badge.svg)
+![Tests](https://github.com/GioCorpus/QuantumEnergyOS/actions/workflows/ci-tests.yml/badge.svg)
+![Lint](https://github.com/GioCorpus/QuantumEnergyOS/actions/workflows/ci-lint.yml/badge.svg)
+![Dependencies](https://github.com/GioCorpus/QuantumEnergyOS/actions/workflows/ci-pip-audit-fix.yml/badge.svg)
+
+---
+
+### 🔐 Seguridad
+Auditorías automáticas de dependencias (`pip-audit`, `safety`) y análisis estático (`bandit`, `semgrep`) en cada commit.  
+**Estado actual:** todos los escaneos pasan ✅
+
+### 🧪 Tests
+Suite de `pytest` ejecutada en cada PR para garantizar estabilidad.  
+**Estado actual:** todos los tests pasan ✅
+
+### 🎨 Lint
+Validación con `ruff` para mantener estilo consistente y evitar errores comunes.  
+**Estado actual:** sin problemas de lint ✅
+
+### 📦 Dependencias
+Dependencias fijadas en `requirements-pinned.txt` y auditadas semanalmente.  
+**Estado actual:** sin vulnerabilidades conocidas ✅
+
