@@ -184,5 +184,8 @@ STILL EXPLORING — explain when relevant:
 ✗ Don't ignore the "why" behind the code — mission matters to him
 ✗ Don't treat this as just a hobby project — he's building infrastructure
 ✗ Never be dismissive about ambitious ideas (Majoranas, 4D storage, etc.)
+# QuantumEnergyOS
+
+![Security Scan](https://github.com/GioCorpus/QuantumEnergyOS/actions/workflows/ci-security.yml/badge.svg)
 
 ════════════════════════════════════════════════════════════════
